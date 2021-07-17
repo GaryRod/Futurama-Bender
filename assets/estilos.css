@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 10px;
+}
+
+.cont-ant-inicio {
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: #75919c;
+    border-radius: 50%;
+    border: solid 2px;
+    position: absolute;
+    top: -12.5rem;
+    left: 7.8125rem
+}
+
+.cont-cable {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent #75919c transparent;
+    border-width: 0px 0.625rem 8.75rem 0.625rem;
+    position: absolute;
+    top: -20.625rem;
+    left: 8.6875rem;
+}
+
+.cont-punta {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    border: solid 2px;
+    background-color: #75919c;
+    position: absolute;
+    top: -20.625rem;
+    left: 8.4375rem;
+}
+
+.cont-cza-uno {
+    width: 18.75rem;
+    height: 24rem;
+    position: absolute;
+    background-color: #75919c;
+    border: solid 2px;
+    border-radius: 48%;
+    top: -11.5rem;
+    left: -0.125rem;
+}
+
+.cont-cza-dos {
+    width: 18.75rem;
+    height: 28.125rem;
+    background-color: #75919c;
+    position: relative;
+    border: solid 2px;
+    border-top: transparent;
+    margin: 380px auto
+}
+
+.cont__ojos {
+    width: 30rem;
+    height: 12.5rem;
+    background-color: #75919c;
+    border-radius: 45%;
+    border: solid 2px;
+    position: absolute;
+    left: -5.625rem;
+}
+
+.cont__fondo {
+    width: 27.5rem;
+    height: 10rem;
+    background-color: black;
+    position: absolute;
+    border-radius: 45%;
+    top: 1.25rem;
+    left: 1.25rem;
+}
+
+.cont__ojo-uno {
+    width: 9.0625rem;
+    height: 9.0625rem;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    left: 3.125rem;
+    top: 0.4375rem
+}
+
+.cont__ojos-dos {
+    width: 9.0625rem;
+    height: 9.0625rem;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    right: 3.125rem;
+    top: 0.4375rem;
+}
+
+.cont-pupila-uno {
+    background-color: black;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 4.0313rem;
+    left: 4.0313rem;
+}
+
+.cont-pupila-dos {
+    background-color: black;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 4.0313rem;
+    left: 4.0313rem;
+}
+
+.boca {
+    width: 18.125rem;
+    height: 9.375rem;
+    background-color: white;
+    position: absolute;
+    border-radius: 45%;
+    border: solid 2px;
+    top: 17.5rem;
+    left: 0.3125rem;
+}
+
+.cont-dientes {
+    width: 18.125rem;
+    height: 9.375rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.fila {
+    display: flex;
+    position: relative;
+    top: -0.0625rem;
+    left: -0.0625rem;
+}
+
+.colum {
+    width: 2.0187rem;
+    height: 3.3125rem;
+    border: solid 2px;
+}
+
+
+@media screen and (max-width: 780px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 9px;
+        margin: -150px auto
+    }
+}
