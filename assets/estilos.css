@@ -10,6 +10,7 @@ body {
     font-size: 10px;
 }
 
+/* Antena */
 .cont-ant-inicio {
     width: 3.125rem;
     height: 3.125rem;
@@ -43,6 +44,7 @@ body {
     left: 8.4375rem;
 }
 
+/* Cabeza */
 .cont-cza-uno {
     width: 18.75rem;
     height: 24rem;
@@ -64,6 +66,7 @@ body {
     margin: 380px auto
 }
 
+/* Ojos */
 .cont__ojos {
     width: 30rem;
     height: 12.5rem;
@@ -104,6 +107,7 @@ body {
     top: 0.4375rem;
 }
 
+
 .cont-pupila-uno {
     background-color: black;
     width: 1rem;
@@ -111,6 +115,7 @@ body {
     position: absolute;
     top: 4.0313rem;
     left: 4.0313rem;
+    animation: ojos 4s .5s infinite;
 }
 
 .cont-pupila-dos {
@@ -120,8 +125,36 @@ body {
     position: absolute;
     top: 4.0313rem;
     left: 4.0313rem;
+    animation: ojos 4s .5s infinite;
 }
 
+@keyframes ojos {
+    0% {
+        top: 4.0313rem;
+        left: 4.0313rem;
+    }
+
+    25% {
+        top: 4.0313rem;
+        left: 8.0313rem;
+    }
+
+    50% {
+        top: 4.0313rem;
+        left: 4.0313rem;
+    }
+
+    75% {
+        top: 4.0313rem;
+        left: -.0313rem;
+    }
+
+    100% {
+        top: 4.0313rem;
+        left: 4.0313rem;
+}
+}
+/* Boca */
 .boca {
     width: 18.125rem;
     height: 9.375rem;
@@ -151,7 +184,6 @@ body {
     height: 3.3125rem;
     border: solid 2px;
 }
-
 
 @media screen and (max-width: 780px) {
     html {
