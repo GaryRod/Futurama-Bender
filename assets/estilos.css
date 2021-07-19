@@ -15,15 +15,18 @@ body {
 }
 
 /* Texto */
+.cont-text {
+    text-align: center;
+    margin: 0 auto;
+}
+
 .cont-text__degradado {
-    margin-left: 250px;
     font-size: 8rem;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #570800 30%, #e10300 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 
 /* Antena */
 .cont-ant-inicio {
@@ -216,6 +219,10 @@ body {
     .cont-cza-dos {
         margin: 350px auto
     }
+
+    .cont-text__degradado {
+        font-size: 6rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -225,5 +232,12 @@ body {
 
     .cont-cza-dos {
         margin: 250px auto
+    }
+
+    .cont-text {
+        width: 100%;
+    }
+    .cont-text__degradado {
+        font-size: 5rem;
     }
 }
