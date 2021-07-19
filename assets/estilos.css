@@ -34,7 +34,7 @@ body {
     height: 3.125rem;
     background-color: rgb(165, 193, 199);
     border-radius: 50%;
-    border: solid 2px;
+    border: solid 0.125rem;
     position: absolute;
     top: -12.5rem;
     left: 7.8125rem;
@@ -51,19 +51,19 @@ body {
     position: absolute;
     top: -20.625rem;
     left: 8.6875rem;
-    box-shadow: 10px 3px black
+    box-shadow: 0.625rem 0.1875rem black
 }
 
 .cont-punta {
     width: 1.875rem;
     height: 1.875rem;
     border-radius: 50%;
-    border: solid 2px;
+    border: solid 0.125rem;
     background-color: rgb(165, 193, 199);
     position: absolute;
     top: -20.625rem;
     left: 8.4375rem;
-    box-shadow: 10px 3px black
+    box-shadow: 0.625rem 0.1875rem black
 }
 
 /* Cabeza */
