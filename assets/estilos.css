@@ -38,7 +38,7 @@ body {
     position: absolute;
     top: -12.5rem;
     left: 7.8125rem;
-    box-shadow: 10px 3px black
+    box-shadow: 0.625rem 0.1875rem black
     
 }
 
@@ -47,11 +47,11 @@ body {
     height: 0;
     border-style: solid;
     border-color: transparent transparent rgb(165, 193, 199) transparent;
-    border-width: 0px 0.625rem 8.75rem 0.625rem;
+    border-width: 0px 0.625rem 8.3rem 0.625rem;
     position: absolute;
-    top: -20.625rem;
-    left: 8.6875rem;
-    box-shadow: 0.625rem 0.1875rem black
+    top: -20.5rem;
+    left: 8.78rem;
+    box-shadow: 0.5rem -0.0625rem black
 }
 
 .cont-punta {
@@ -62,8 +62,8 @@ body {
     background-color: rgb(165, 193, 199);
     position: absolute;
     top: -20.625rem;
-    left: 8.4375rem;
-    box-shadow: 0.625rem 0.1875rem black
+    left: 8.4rem;
+    box-shadow: 0.9rem 0rem black
 }
 
 /* Cabeza */
