@@ -198,7 +198,7 @@ body {
 .fila {
     display: flex;
     position: relative;
-    top: -1.5rem;
+    top: -1.8rem;
     background-image: url(../imagenes/hablar.png);
     animation: hablar 3s 1s infinite;
 }
@@ -214,7 +214,7 @@ body {
 
 .colum {
     width: 2.0187rem;
-    height: 9.375rem;
+    height: 14rem;
     border: solid 0.125rem;
     border-top: transparent;
     border-bottom: transparent;
@@ -232,6 +232,19 @@ body {
     .cont-text__degradado {
         font-size: 6rem;
     }
+
+    .fila {
+        top: -.6rem;
+    }
+
+    @keyframes hablar {
+        0% {
+            background-position: 0px 0px;
+        }
+        100% {
+            background-position: -40rem 0rem;
+        }       
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -248,5 +261,19 @@ body {
     }
     .cont-text__degradado {
         font-size: 5rem;
+    }
+
+    .fila {
+        top: -.2rem;
+        background-image: url(../imagenes/hablar-mobile.png);
+    }
+
+    @keyframes hablar {
+        0% {
+            background-position: 0px 0px;
+        }
+        100% {
+            background-position: -31rem 0rem;
+        }       
     }
 }
