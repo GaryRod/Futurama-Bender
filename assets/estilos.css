@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 12px;
-}
-
 body {
     width: 100%;
     height: 100vh;
@@ -16,12 +12,14 @@ body {
 
 /* Texto */
 .cont-text {
-    text-align: center;
+    font-size: 14px;
     margin: 0 auto;
+    width: 586px;
+    position: relative;
 }
 
 .cont-text__degradado {
-    font-size: 8rem;
+    font-size: 7em;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
     -webkit-background-clip: text;
@@ -31,88 +29,88 @@ body {
 
 .sombra1 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 2px;
-    left: 225px;
+    top: 0.01em;
+    left: 0.02em;
 }
 .sombra2 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 3px;
-    left: 226px;
+    top: .02em;
+    left: .03em;
 }
 .sombra3 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 4px;
-    left: 227px;
+    top: .03em;
+    left: .04em;
 }
 .sombra4 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 5px;
-    left: 228px;
+    top: 0.04em;
+    left: .05em;
 }
 .sombra5 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 6px;
-    left: 229px;
+    top: .05em;
+    left: .06em;
 }
 .sombra6 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 7px;
-    left: 230px;
+    top: .06em;
+    left: .07em;
 }
 .sombra7 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 8px;
-    left: 231px;
+    top: .07em;
+    left: .08em;
 }
 .sombra8 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 9px;
-    left: 232px;
+    top: .08em;
+    left: .09em;
 }
 .sombra9 {
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: 7em;
     position: absolute;
     z-index: -1;
-    top: 10px;
-    left: 233px;
+    top: .09em;
+    left: .10em;
 }
 
 /* Antena */
 .cont-ant-inicio {
-    width: 3.125rem;
-    height: 3.125rem;
+    width: 3.125em;
+    height: 3.125em;
     background-color: rgb(165, 193, 199);
     border-radius: 50%;
-    border: solid 0.125rem;
+    border: solid 0.125em;
     position: absolute;
-    top: -12.5rem;
-    left: 7.8125rem;
-    box-shadow: 0.625rem 0.1875rem black
+    top: -12.5em;
+    left: 7.8125em;
+    box-shadow: 0.625em 0.1875em black
     
 }
 
@@ -121,149 +119,150 @@ body {
     height: 0;
     border-style: solid;
     border-color: transparent transparent rgb(165, 193, 199) transparent;
-    border-width: 0px 0.625rem 8.3rem 0.625rem;
+    border-width: 0px 0.625em 8.3em 0.625em;
     position: absolute;
-    top: -20.5rem;
-    left: 8.78rem;
-    box-shadow: 0.5rem -0.0625rem black
+    top: -20.5em;
+    left: 8.78em;
+    box-shadow: 0.5em -0.0625em black
 }
 
 .cont-punta {
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 1.875em;
+    height: 1.875em;
     border-radius: 50%;
-    border: solid 0.125rem;
+    border: solid 0.125em;
     background-color: rgb(165, 193, 199);
     position: absolute;
-    top: -20.625rem;
-    left: 8.4rem;
-    box-shadow: 0.9rem 0rem black
+    top: -20.625em;
+    left: 8.4em;
+    box-shadow: 0.9em 0em black
 }
 
 /* Cabeza */
 .cont-cza-uno {
-    width: 18.75rem;
-    height: 24rem;
+    width: 18.75em;
+    height: 24em;
     position: absolute;
     background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
     border: solid 2px;
     border-radius: 48%;
-    top: -12rem;
-    left: -0.125rem;
+    top: -12em;
+    left: -0.125em;
     box-shadow: 10px 3px black
 }
 
 .cont-cza-dos {
-    width: 18.75rem;
-    height: 28.125rem;
+    width: 18.75em;
+    height: 28.125em;
     background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
     position: relative;
     border: solid 2px;
     border-top: transparent;
     margin: 250px auto;
-    box-shadow: 10px 3px black
+    box-shadow: 10px 3px black;
+    font-size: 12px;
 }
 
 /* Ojos */
 .cont__ojos {
-    width: 30rem;
-    height: 12.5rem;
+    width: 30em;
+    height: 12.5em;
     background-color: rgb(165, 193, 199);
     border-radius: 45%;
     border: solid 2px;
     position: absolute;
-    left: -5.625rem;
+    left: -5.625em;
     box-shadow: 10px 3px black
 }
 
 .cont__fondo {
-    width: 27.5rem;
-    height: 10rem;
+    width: 27.5em;
+    height: 10em;
     background-color: black;
     position: absolute;
     border-radius: 45%;
-    top: 1.25rem;
-    left: 1.25rem;
+    top: 1.25em;
+    left: 1.25em;
 }
 
 .cont__ojo-uno {
-    width: 9.0625rem;
-    height: 9.0625rem;
+    width: 9.0625em;
+    height: 9.0625em;
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    left: 3.125rem;
-    top: 0.4375rem
+    left: 3.125em;
+    top: 0.4375em
 }
 
 .cont__ojos-dos {
-    width: 9.0625rem;
-    height: 9.0625rem;
+    width: 9.0625em;
+    height: 9.0625em;
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    right: 3.125rem;
-    top: 0.4375rem;
+    right: 3.125em;
+    top: 0.4375em;
 }
 
 
 .cont-pupila-uno {
     background-color: black;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
     position: absolute;
-    top: 4.0313rem;
-    left: 4.0313rem;
+    top: 4.0313em;
+    left: 4.0313em;
     animation: pupila-ojos 4s .5s infinite;
 }
 
 .cont-pupila-dos {
     background-color: black;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
     position: absolute;
-    top: 4.0313rem;
-    left: 4.0313rem;
+    top: 4.0313em;
+    left: 4.0313em;
     animation: pupila-ojos 4s .5s infinite;
 }
 
 @keyframes pupila-ojos {
     0% {
-        top: 4.0313rem;
-        left: 4.0313rem;
+        top: 4.0313em;
+        left: 4.0313em;
     }
 
     25% {
-        top: 4.0313rem;
-        left: 8.0313rem;
+        top: 4.0313em;
+        left: 8.0313em;
     }
 
     50% {
-        top: 4.0313rem;
-        left: 4.0313rem;
+        top: 4.0313em;
+        left: 4.0313em;
     }
 
     75% {
-        top: 4.0313rem;
-        left: -.0313rem;
+        top: 4.0313em;
+        left: -.0313em;
     }
 
     100% {
-        top: 4.0313rem;
-        left: 4.0313rem;
+        top: 4.0313em;
+        left: 4.0313em;
 }
 }
 
 /* Boca */
 .boca {
-    width: 18.125rem;
-    height: 9.375rem;
+    width: 18.125em;
+    height: 9.375em;
     background-color: white;
     position: relative;
     border-radius: 45%;
-    border: solid 0.125rem;
-    top: 17.5rem;
-    left: 0.13rem;
+    border: solid 0.125em;
+    top: 17.5em;
+    left: 0.13em;
     overflow: hidden;
     
 }
@@ -271,7 +270,7 @@ body {
 .fila {
     display: flex;
     position: relative;
-    top: -1.8rem;
+    top: -1.8em;
     background-image: url(../imagenes/hablar.png);
     animation: hablar 3s 1s infinite;
 }
@@ -281,63 +280,63 @@ body {
         background-position: 0px 0px;
     }
     100% {
-        background-position: -36.875rem 0px;
+        background-position: -36.875em 0px;
     }
 }
 
 .colum {
-    width: 2.0187rem;
-    height: 14rem;
-    border: solid 0.125rem;
+    width: 2.0187em;
+    height: 14em;
+    border: solid 0.125em;
     border-top: transparent;
     border-bottom: transparent;
 }
 
 @media screen and (max-width: 780px) and (min-width: 481px) {
-    html {
-        font-size: 14px;
-    }
-    
     .cont-cza-dos {
-        margin: 350px auto
+        margin: 250px auto;
+        font-size: 10px;
     }
 
-    .cont-text__degradado {
-        font-size: 6rem;
+    .cont-text {
+        font-size: 12px;
+        width: 500px;
     }
 
-    .fila {
-        top: -.6rem;
-    }
+    
 
     @keyframes hablar {
         0% {
             background-position: 0px 0px;
         }
         100% {
-            background-position: -40rem 0rem;
+            background-position: -40em 0em;
         }       
     }
 }
 
 @media screen and (max-width: 480px) {
-    html {
+    .cont-cza-dos {
+        margin: 250px auto;
         font-size: 9px;
     }
 
-    .cont-cza-dos {
-        margin: 250px auto
+    .cont-text {
+        width: 300px;
+        font-size: 7px;
+        margin: 0 auto
     }
 
-    .cont-text {
-        width: 100%;
-    }
     .cont-text__degradado {
-        font-size: 5rem;
+        left: ;
+    }
+
+    .sombra1 {
+        left: ;
     }
 
     .fila {
-        top: -.2rem;
+        top: -.2em;
         background-image: url(../imagenes/hablar-mobile.png);
     }
 
@@ -346,7 +345,7 @@ body {
             background-position: 0px 0px;
         }
         100% {
-            background-position: -31rem 0rem;
+            background-position: -31em 0em;
         }       
     }
 }
