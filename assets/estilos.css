@@ -208,13 +208,13 @@ body {
         background-position: 0px 0px;
     }
     100% {
-        background-position: -590px 0px;
+        background-position: -36.875rem 0px;
     }
 }
 
 .colum {
     width: 2.0187rem;
-    height: 150px;
+    height: 9.375rem;
     border: solid 0.125rem;
     border-top: transparent;
     border-bottom: transparent;
