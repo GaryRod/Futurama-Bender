@@ -29,6 +29,79 @@ body {
     position: relative;
 }
 
+.sombra1 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 225px;
+}
+.sombra2 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 3px;
+    left: 226px;
+}
+.sombra3 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 227px;
+}
+.sombra4 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 228px;
+}
+.sombra5 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 6px;
+    left: 229px;
+}
+.sombra6 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 6px;
+    left: 230px;
+}
+.sombra7 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 7px;
+    left: 231px;
+}
+.sombra8 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 9px;
+    left: 232px;
+}
+.sombra9 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: absolute;
+    z-index: -1;
+    top: 9px;
+    left: 233px;
+}
+
 /* Antena */
 .cont-ant-inicio {
     width: 3.125rem;
