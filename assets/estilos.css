@@ -23,9 +23,10 @@ body {
 .cont-text__degradado {
     font-size: 8rem;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, #570800 30%, #e10300 100%);
+    background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
 }
 
 /* Antena */
@@ -71,7 +72,7 @@ body {
     width: 18.75rem;
     height: 24rem;
     position: absolute;
-    background-color: rgb(139, 166, 169);
+    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
     border: solid 2px;
     border-radius: 48%;
     top: -12rem;
@@ -82,7 +83,7 @@ body {
 .cont-cza-dos {
     width: 18.75rem;
     height: 28.125rem;
-    background-color: rgb(139, 166, 169);
+    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
     position: relative;
     border: solid 2px;
     border-top: transparent;
@@ -185,30 +186,38 @@ body {
     width: 18.125rem;
     height: 9.375rem;
     background-color: white;
-    position: absolute;
+    position: relative;
     border-radius: 45%;
     border: solid 0.125rem;
     top: 17.5rem;
     left: 0.13rem;
+    overflow: hidden;
+    
 }
 
-.cont-dientes {
-    width: 18.125rem;
-    height: 9.375rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
 .fila {
     display: flex;
     position: relative;
-    top: -0.0625rem;
-    left: -0.0625rem;
+    top: -1.5rem;
+    background-image: url(../imagenes/hablar.png);
+    animation: hablar 3s 1s infinite;
+}
+
+@keyframes hablar {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -590px 0px;
+    }
 }
 
 .colum {
     width: 2.0187rem;
-    height: 3.3125rem;
+    height: 150px;
     border: solid 0.125rem;
+    border-top: transparent;
+    border-bottom: transparent;
 }
 
 @media screen and (max-width: 780px) and (min-width: 481px) {
