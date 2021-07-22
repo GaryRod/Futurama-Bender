@@ -10,14 +10,72 @@ body {
     background-color: rgb(3, 77, 102);
 }
 
-.button {
-    cursor: pointer;
-    display: inline-block;
-    width: 40px;
-    height: 30px;
-    background-color: rgb(230, 20, 20);
+/* Controles */
+/* Botones genrales */
+.cont-controles {
+    width: 300px;
+    height: 200px;
+    border: solid 2px;
+    background: linear-gradient(to bottom, #570800 10%, #e10300 100%);
+    position: relative;
+    text-align: center;
 }
 
+.controles, .controles__boca, .controles__ojos {
+    color: white;
+}
+
+.controles__boca, .controles__ojos {
+    display: inline-block;
+}
+
+.button  {
+    cursor: pointer;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background: linear-gradient(to bottom right, #e76e1d 10%, #fa8510 60%);
+    border: solid 2px;
+    border-radius: 45%;
+    text-align: center;
+    padding-top: 3px;
+    box-shadow: 3px 3px;
+    position: absolute;
+    z-index: 100;
+}
+
+.button:active {
+    background: rgb(243, 11, 11);
+    color: white;
+    box-shadow: 3px 3px black;
+    border: solid 2px black;
+}
+
+/* Botones boca */
+.btn-play__boca {
+    top: 250px;
+    left: 40px;
+}
+
+.btn-pausa__boca {
+    top: 200px;
+    left: 40px;
+}
+
+/* Botones ojos */
+.controles__ojos {
+    margin-left: 100px;
+}
+
+.btn-play__ojos {
+    top: 250px;
+    left: 180px;
+}
+
+.btn-pausa__ojos {
+    top: 200px;
+    left: 180px;
+}
 
 /* Texto */
 .cont-text {
@@ -109,8 +167,34 @@ body {
     left: .10em;
 }
 
+
+/* Cabeza */
+.cont-cza-uno {
+    width: 18.75em;
+    height: 28.125em;
+    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
+    position: relative;
+    border: solid 2px;
+    border-top: transparent;
+    margin: 100px auto;
+    box-shadow: 10px 3px black;
+    font-size: 12px;
+}
+
+.cont-cza-dos {
+    width: 18.75em;
+    height: 24em;
+    position: absolute;
+    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
+    border: solid 2px;
+    border-radius: 48%;
+    top: -12em;
+    left: -0.125em;
+    box-shadow: 10px 3px black
+}
+
 /* Antena */
-.cont-ant-inicio {
+.cont-ant__inicio {
     width: 3.125em;
     height: 3.125em;
     background-color: rgb(165, 193, 199);
@@ -123,7 +207,7 @@ body {
     
 }
 
-.cont-cable {
+.cont-ant__cable {
     width: 0;
     height: 0;
     border-style: solid;
@@ -135,7 +219,7 @@ body {
     box-shadow: 0.5em -0.0625em black
 }
 
-.cont-punta {
+.cont-ant__punta {
     width: 1.875em;
     height: 1.875em;
     border-radius: 50%;
@@ -147,33 +231,8 @@ body {
     box-shadow: 0.9em 0em black
 }
 
-/* Cabeza */
-.cont-cza-uno {
-    width: 18.75em;
-    height: 24em;
-    position: absolute;
-    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
-    border: solid 2px;
-    border-radius: 48%;
-    top: -12em;
-    left: -0.125em;
-    box-shadow: 10px 3px black
-}
-
-.cont-cza-dos {
-    width: 18.75em;
-    height: 28.125em;
-    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
-    position: relative;
-    border: solid 2px;
-    border-top: transparent;
-    margin: 250px auto;
-    box-shadow: 10px 3px black;
-    font-size: 12px;
-}
-
 /* Ojos */
-.cont__ojos {
+.cont-ojos {
     width: 30em;
     height: 12.5em;
     background-color: rgb(165, 193, 199);
@@ -184,7 +243,7 @@ body {
     box-shadow: 10px 3px black
 }
 
-.cont__fondo {
+.cont-ojos__fondo {
     width: 27.5em;
     height: 10em;
     background-color: black;
@@ -194,7 +253,7 @@ body {
     left: 1.25em;
 }
 
-.cont__ojo-uno {
+.cont-ojos__ojo-uno {
     width: 9.0625em;
     height: 9.0625em;
     position: absolute;
@@ -204,7 +263,7 @@ body {
     top: 0.4375em
 }
 
-.cont__ojos-dos {
+.cont-ojos__ojo-dos {
     width: 9.0625em;
     height: 9.0625em;
     position: absolute;
@@ -215,17 +274,7 @@ body {
 }
 
 
-.cont-pupila-uno {
-    background-color: black;
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    top: 4.0313em;
-    left: 4.0313em;
-    animation: pupila-ojos 4s .5s infinite;
-}
-
-.cont-pupila-dos {
+.cont-ojos__pupilas {
     background-color: black;
     width: 1em;
     height: 1em;
@@ -263,7 +312,7 @@ body {
 }
 
 /* Boca */
-.boca {
+.cont-boca {
     width: 18.125em;
     height: 9.375em;
     background-color: white;
@@ -273,10 +322,9 @@ body {
     top: 17.5em;
     left: 0.13em;
     overflow: hidden;
-    
 }
 
-.fila {
+.cont-boca__fila {
     display: flex;
     position: relative;
     top: -1.8em;
@@ -298,26 +346,37 @@ body {
 input {
     display: none;
 }
-#pause:checked ~ .cont-cza-dos .boca .fila {
+#pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
     animation-name: hablar;
     animation-play-state: paused;
 }
-#play:checked ~ .cont-cza-dos .boca .fila {
+#play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
     animation-name: hablar;
     animation-play-state: running;
 }
 
+#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: paused;
+}
+#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: paused;
+}
 
-.colum {
+#play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: running;
+}
+
+.cont-boca__colum {
     width: 2.0187em;
     height: 14em;
     border: solid 0.125em;
-    border-top: transparent;
-    border-bottom: transparent;
 }
 
 @media screen and (max-width: 780px) and (min-width: 481px) {
-    .cont-cza-dos {
+    .cont-cza-uno {
         margin: 250px auto;
         font-size: 10px;
     }
@@ -338,9 +397,34 @@ input {
 }
 
 @media screen and (max-width: 480px) {
-    .cont-cza-dos {
-        margin: 250px auto;
-        font-size: 9px;
+
+    .cont-controles {
+        height: 150px;
+    }
+    /* Botones boca */
+    .btn-play__boca {
+        top: 128px;
+        left: 40px;
+    }
+
+    .btn-pausa__boca {
+        top: 165px;
+        left: 40px;
+    }
+
+    /* Botones ojos */
+    .controles__ojos {
+        margin-left: 100px;
+    }
+
+    .btn-play__ojos {
+        top: 128px;
+        left: 190px;
+    }
+
+    .btn-pausa__ojos {
+        top: 165px;
+        left: 190px;
     }
 
     .cont-text {
@@ -349,7 +433,12 @@ input {
         margin: 0 auto
     }
 
-    .fila {
+    .cont-cza-uno {
+        margin: 200px auto;
+        font-size: 9px;
+    }
+
+    .cont-boca__fila {
         top: -.2em;
         background-image: url(../imagenes/hablar-mobile.png);
     }
