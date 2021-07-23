@@ -8,14 +8,39 @@ body {
     width: 100%;
     height: 100vh;
     background-color: rgb(3, 77, 102);
+    overflow-x: hidden;
 }
 
+.fondo-nave {
+    position: absolute;
+    z-index: -1;
+    top: 100px;
+    left: -25px;
+    animation-name: nave;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-delay: .5;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes nave {
+    0% {
+        top: 100px;
+    left: -25px;
+    }
+    100% {
+        top: 100px;
+    left: 100vw;
+    }
+}
 /* Controles */
 /* Botones genrales */
 .cont-controles {
     width: 300px;
     height: 200px;
     border: solid 2px;
+    border-radius: 25%;
     background: linear-gradient(to bottom, #570800 10%, #e10300 100%);
     position: relative;
     text-align: center;
@@ -62,6 +87,16 @@ body {
     left: 40px;
 }
 
+#pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+    animation-name: hablar;
+    animation-play-state: paused;
+}
+
+#play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+    animation-name: hablar;
+    animation-play-state: running;
+}
+
 /* Botones ojos */
 .controles__ojos {
     margin-left: 100px;
@@ -76,6 +111,25 @@ body {
     top: 200px;
     left: 180px;
 }
+
+input {
+    display: none;
+}
+
+#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: paused;
+}
+#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: paused;
+}
+
+#play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+    animation-name: pupila-ojos;
+    animation-play-state: running;
+}
+
 
 /* Texto */
 .cont-text {
@@ -92,6 +146,35 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
+    animation: texto 3s infinite;
+}
+
+@keyframes texto {
+    0% {
+        background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    25% {
+        background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    50% {
+        background: linear-gradient(to bottom, #570800 1%, #e10300 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    75% {
+        background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    100% {
+        background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .sombra1 {
@@ -167,18 +250,39 @@ body {
     left: .10em;
 }
 
-
 /* Cabeza */
 .cont-cza-uno {
     width: 18.75em;
     height: 28.125em;
     background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
-    position: relative;
     border: solid 2px;
     border-top: transparent;
-    margin: 100px auto;
     box-shadow: 10px 3px black;
-    font-size: 12px;
+    position: relative;
+    z-index: -4;
+    font-size: .5px;
+    margin: -100px 0px 0px 90px;
+    animation-name: cabeza;
+    animation-delay: .3s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cabeza {
+    0% {
+        margin: -100px 0px 0px 90px;
+        font-size: .5px;
+    }
+
+    50% {
+        margin: -100px 0px 0px 40%;
+        font-size: .5px;
+    }
+
+    100% {
+        margin: 100px auto;
+        font-size: 12px;
+    }
 }
 
 .cont-cza-dos {
@@ -273,7 +377,6 @@ body {
     top: 0.4375em;
 }
 
-
 .cont-ojos__pupilas {
     background-color: black;
     width: 1em;
@@ -343,38 +446,13 @@ body {
     }
 }
 
-input {
-    display: none;
-}
-#pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: paused;
-}
-#play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: running;
-}
-
-#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: paused;
-}
-#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: paused;
-}
-
-#play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: running;
-}
-
 .cont-boca__colum {
     width: 2.0187em;
     height: 14em;
     border: solid 0.125em;
 }
 
+/* Media Queries */
 @media screen and (max-width: 780px) and (min-width: 481px) {
     .cont-cza-uno {
         margin: 250px auto;
@@ -396,10 +474,65 @@ input {
     }
 }
 
-@media screen and (max-width: 480px) {
 
+@media screen and (max-width: 480px) {
     .cont-controles {
         height: 150px;
+    }
+    /* Nave */
+    .fondo-nave {
+        z-index: -1;
+        top: 20px;
+        left: -25px;
+        animation-name: nave;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-delay: .5;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    
+    @keyframes nave {
+        0% {
+            top: 20px;
+        left: -25px;
+        }
+
+        50% {
+            left: -25px;
+            top:150px
+        }
+        100% {
+            top: 150px;
+            left: 100vw;
+        }
+    }
+    /* Cabeza */
+    .cont-cza-uno {
+        z-index: -4;
+        font-size: .5px;
+        margin: -100px 0px 0px 90px;
+        animation-name: cabeza;
+        animation-delay: .5s;
+        animation-duration: 6s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes cabeza {
+        0% {
+            margin: -100px 0px 0px 150px;
+            font-size: .5px;
+        }
+
+        50% {
+            margin: 70px 0px 0px 150px;
+            font-size: .5px;
+        }
+
+        100% {
+            margin: 200px auto;
+            font-size: 9px;
+        }
     }
     /* Botones boca */
     .btn-play__boca {
@@ -427,15 +560,11 @@ input {
         left: 190px;
     }
 
+    /* Texto */
     .cont-text {
         width: 300px;
         font-size: 7px;
         margin: 0 auto
-    }
-
-    .cont-cza-uno {
-        margin: 200px auto;
-        font-size: 9px;
     }
 
     .cont-boca__fila {
