@@ -8,12 +8,13 @@ body {
     width: 100%;
     height: 100vh;
     background-color: rgb(3, 77, 102);
+    overflow-x: hidden;
 }
 
 .fondo-nave {
     position: absolute;
     z-index: -1;
-    top: 100px;
+    top: 30px;
     left: -25px;
     animation-name: nave;
     animation-duration: 5s;
@@ -24,12 +25,10 @@ body {
 
 @keyframes nave {
     0% {
-        top: 100px;
-    left: -25px;
+        transform: translate(0px, 0px );
     }
     100% {
-        top: 100px;
-    left: 100vw;
+        transform: translate(1200px, 0px);
     }
 }
 /* Controles */
@@ -144,7 +143,10 @@ input {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
-    animation: texto 3s infinite;
+    animation-name: texto;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes texto {
@@ -153,23 +155,13 @@ input {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    25% {
-        background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
     50% {
-        background: linear-gradient(to bottom, #570800 1%, #e10300 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    75% {
         background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     100% {
-        background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
+        background: linear-gradient(to bottom, #570800 1%, #e10300 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -261,25 +253,26 @@ input {
     font-size: .5px;
     margin: -100px 0px 0px 90px;
     animation-name: cabeza;
-    animation-delay: .3s;
+    animation-delay: 1s;
     animation-duration: 5s;
     animation-fill-mode: forwards;
 }
 
 @keyframes cabeza {
     0% {
-        margin: -100px 0px 0px 90px;
+        transform: translate(0px, 0px);
         font-size: .5px;
     }
 
     50% {
-        margin: -100px 0px 0px 40%;
+        transform: translate(500px, 00px);
         font-size: .5px;
     }
 
     100% {
-        margin: 100px auto;
+        transform: translate(300px, 150px);
         font-size: 12px;
+        
     }
 }
 
@@ -382,33 +375,31 @@ input {
     position: absolute;
     top: 4.0313em;
     left: 4.0313em;
-    animation: pupila-ojos 4s .5s infinite;
+    animation: pupila-ojos 4s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: ;
 }
 
 @keyframes pupila-ojos {
     0% {
-        top: 4.0313em;
-        left: 4.0313em;
+        transform: translate(0px, 0px);
     }
 
     25% {
-        top: 4.0313em;
-        left: 8.0313em;
+        transform: translate(4.0313em, 0px);
     }
 
     50% {
-        top: 4.0313em;
-        left: 4.0313em;
+        transform: translate(0px, 0px);
     }
 
     75% {
-        top: 4.0313em;
-        left: -.0313em;
+        transform: translate(-4.0313em, 0px);
     }
 
     100% {
-        top: 4.0313em;
-        left: 4.0313em;
+        transform: translate(0px, 0px);
     }
 }
 
@@ -452,9 +443,57 @@ input {
 
 /* Media Queries */
 @media screen and (max-width: 780px) and (min-width: 481px) {
+    
+
+    .fondo-nave {
+        z-index: -1;
+        top: 30px;
+        left: -25px;
+        animation-name: nave;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-delay: .5;
+        animation-timing-function: ease-in;
+    }
+    
+    @keyframes nave {
+        0% {
+            transform: translate(0px, 0px);
+        }
+
+        50% {
+            transform: translate(0px, 180px);
+        }
+        100% {
+            transform: translate(400px, 180px);
+        }
+    }
+    /* Cabeza */
     .cont-cza-uno {
-        margin: 250px auto;
-        font-size: 10px;
+        z-index: -4;
+        font-size: .5px;
+        margin: -60px 0px 0px 120px;
+        animation-name: cabeza;
+        animation-delay: .5s;
+        animation-duration: 7s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes cabeza {
+        0% {
+            transform: translate(0px, 0px);
+            font-size: .5px;
+        }
+
+        50% {
+            transform: translate(0px, 125px);
+            font-size: .5px;
+        }
+
+        100% {
+            transform: translate(100px, 300px);
+            font-size: 10px;
+        }
+    }
     }
 
     .cont-text {
@@ -470,7 +509,7 @@ input {
             background-position: -40em 0em;
         }       
     }
-}
+
 
 
 @media screen and (max-width: 480px) {
@@ -483,7 +522,7 @@ input {
     }
     /* Nave */
     .fondo-nave {
-        z-index: -1;
+        z-index: 1000;
         top: 20px;
         left: -25px;
         animation-name: nave;
@@ -495,46 +534,45 @@ input {
     
     @keyframes nave {
         0% {
-            top: 20px;
-        left: -25px;
+            transform: translate(0px, 0px);
         }
 
         50% {
-            left: -25px;
-            top:150px
+            transform: translate(0px, 150px);
         }
         100% {
-            top: 150px;
-            left: 400px;
+            transform: translate(400px, 150px);
         }
     }
     /* Cabeza */
     .cont-cza-uno {
         z-index: -4;
         font-size: .5px;
-        margin: -100px 0px 0px 90px;
+        margin: -45px 0px 0px 90px;
         animation-name: cabeza;
         animation-delay: .5s;
-        animation-duration: 6s;
+        animation-duration: 7s;
         animation-fill-mode: forwards;
     }
 
     @keyframes cabeza {
         0% {
-            margin: -100px 0px 0px 150px;
+            transform: translate(0px, 0px);
             font-size: .5px;
         }
 
         50% {
-            margin: 70px 0px 0px 150px;
+            transform: translate(80px, 125px);
             font-size: .5px;
         }
 
         100% {
-            margin: 200px auto;
+            transform: translate(30px, 250px);
             font-size: 9px;
         }
     }
+    }
+
     /* Botones boca */
     .btn-play__boca {
         top: 128px;
