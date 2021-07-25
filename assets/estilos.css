@@ -378,7 +378,6 @@ input {
     animation: pupila-ojos 4s;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    animation-direction: ;
 }
 
 @keyframes pupila-ojos {
@@ -570,7 +569,6 @@ input {
             transform: translate(30px, 250px);
             font-size: 9px;
         }
-    }
     }
 
     /* Botones boca */
