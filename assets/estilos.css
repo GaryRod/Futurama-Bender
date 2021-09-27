@@ -9,6 +9,7 @@ body {
     height: 100vh;
     background-color: rgb(3, 77, 102);
     overflow-x: hidden;
+    padding-bottom: 20px;
 }
 
 .fondo-nave {
@@ -35,23 +36,21 @@ body {
 /* Botones genrales */
 .cont-controles {
     width: 300px;
-    height: 200px;
-    border: solid 2px;
+    height: 150px;
+    border: solid 2px black;
     border-radius: 25%;
     background: linear-gradient(to bottom, #570800 10%, #e10300 100%);
     position: relative;
     text-align: center;
-}
-
-.controles, .controles__boca, .controles__ojos {
     color: white;
 }
 
-.controles__boca, .controles__ojos {
-    display: inline-block;
+.controles-ojos-boca{
+    display: flex;
+    justify-content: space-around;
 }
 
-.button  {
+.button{
     cursor: pointer;
     display: inline-block;
     width: 80px;
@@ -73,66 +72,72 @@ body {
     border: solid 2px black;
 }
 
-/* Botones boca */
-.btn-play__boca {
-    top: 250px;
-    left: 40px;
-}
-
-.btn-pausa__boca {
-    top: 200px;
-    left: 40px;
-}
-
-#pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: paused;
-}
-
-#play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: running;
-}
-
-/* Botones ojos */
-.controles__ojos {
-    margin-left: 100px;
-}
-
-.btn-play__ojos {
-    top: 250px;
-    left: 180px;
-}
-
-.btn-pausa__ojos {
-    top: 200px;
-    left: 180px;
-}
-
-input {
+.input{
     display: none;
 }
 
-#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
+/* Botones boca */
+.btn-pausa__boca {
+    top: 180px;
+    left: 40px;
+}
+
+.btn-pausa__boca::after{
+    content: "Pausa";
+}
+
+.pause-b:checked + .btn-pausa__boca::after {
+    content: "Play";
+}
+
+.pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+    animation-name: hablar;
+    animation-play-state: paused;
+}
+
+/* .play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+    animation-name: hablar;
+    animation-play-state: running;
+} */
+
+/* Botones ojos */
+/* .controles__ojos {
+    margin-left: 100px;
+} */
+
+.btn-pausa__ojos {
+    top: 180px;
+    left: 180px;
+}
+
+.btn-pausa__ojos::after{
+    content: "Pausa";
+}
+
+.pause-o:checked + .btn-pausa__ojos::after{
+    content: "Play";
+}
+
+.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
     animation-name: pupila-ojos;
     animation-play-state: paused;
 }
-#pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
     animation-name: pupila-ojos;
     animation-play-state: paused;
 }
 
-#play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+/* #play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
     animation-name: pupila-ojos;
     animation-play-state: running;
-}
+} */
 
 
 /* Texto */
 .cont-text {
     font-size: 14px;
     margin: 0 auto;
-    width: 586px;
+    width: 0px;
     position: relative;
 }
 
@@ -144,7 +149,7 @@ input {
     -webkit-text-fill-color: transparent;
     position: relative;
     animation-name: texto;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -248,10 +253,12 @@ input {
     border: solid 2px;
     border-top: transparent;
     box-shadow: 10px 3px black;
+    font-size: .5px;
+    margin: -50px 0px 0px 90px;
+
     position: relative;
     z-index: -4;
-    font-size: .5px;
-    margin: -100px 0px 0px 90px;
+
     animation-name: cabeza;
     animation-delay: 1s;
     animation-duration: 5s;
@@ -265,12 +272,12 @@ input {
     }
 
     50% {
-        transform: translate(500px, 00px);
+        transform: translate(500px, 0px);
         font-size: .5px;
     }
 
     100% {
-        transform: translate(300px, 150px);
+        transform: translate(300px, 160px);
         font-size: 12px;
         
     }
@@ -285,7 +292,7 @@ input {
     border-radius: 48%;
     top: -12em;
     left: -0.125em;
-    box-shadow: 10px 3px black
+    box-shadow: 10px 3px black;
 }
 
 /* Antena */
@@ -331,7 +338,7 @@ input {
     width: 30em;
     height: 12.5em;
     background-color: rgb(165, 193, 199);
-    border-radius: 45%;
+    border-radius: 100px;
     border: solid 2px;
     position: absolute;
     left: -5.625em;
@@ -343,29 +350,29 @@ input {
     height: 10em;
     background-color: black;
     position: absolute;
-    border-radius: 45%;
+    border-radius: 100px;
     top: 1.25em;
     left: 1.25em;
 }
 
 .cont-ojos__ojo-uno {
-    width: 9.0625em;
-    height: 9.0625em;
+    width: 9.8em;
+    height: 9.8em;
     position: absolute;
     background-color: white;
     border-radius: 50%;
     left: 3.125em;
-    top: 0.4375em
+    top: 0.1em
 }
 
 .cont-ojos__ojo-dos {
-    width: 9.0625em;
-    height: 9.0625em;
+    width: 9.8em;
+    height: 9.8em;
     position: absolute;
     background-color: white;
     border-radius: 50%;
     right: 3.125em;
-    top: 0.4375em;
+    top: 0.1em;
 }
 
 .cont-ojos__pupilas {
@@ -375,7 +382,7 @@ input {
     position: absolute;
     top: 4.0313em;
     left: 4.0313em;
-    animation: pupila-ojos 4s;
+    animation-name: pupila-ojos;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
@@ -425,12 +432,20 @@ input {
     animation-iteration-count: infinite;
 }
 
+.hablar{
+    position: relative;
+    top: 60px;
+    animation-name: hablar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 @keyframes hablar {
     0% {
-        background-position: 0px 0px;
+        transform: translate(0px, 0px);
     }
     100% {
-        background-position: -36.875em 0px;
+        transform: translate(-36.875em 0px);
     }
 }
 
@@ -438,15 +453,29 @@ input {
     width: 2.0187em;
     height: 14em;
     border: solid 0.125em;
+    position: relative;
+}
+
+/* Pantalla de carga */
+.loader{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(3, 77, 102);
+    position: fixed;
+    z-index: 10000;
+    transition: all 2s;
+}
+
+.loader2{
+    transform: scale(0);
 }
 
 /* Media Queries */
-@media screen and (max-width: 780px) and (min-width: 481px) {
-    
+@media screen and (max-width: 780px) and (min-width: 481px) {    
 
     .fondo-nave {
         z-index: -1;
-        top: 30px;
+        top: 55px;
         left: -25px;
         animation-name: nave;
         animation-duration: 5s;
@@ -471,12 +500,13 @@ input {
     .cont-cza-uno {
         z-index: -4;
         font-size: .5px;
-        margin: -60px 0px 0px 120px;
+        margin: -25px 0px 0px 120px;
         animation-name: cabeza;
         animation-delay: .5s;
         animation-duration: 7s;
         animation-fill-mode: forwards;
     }
+
     @keyframes cabeza {
         0% {
             transform: translate(0px, 0px);
@@ -489,7 +519,7 @@ input {
         }
 
         100% {
-            transform: translate(100px, 300px);
+            transform: translate(100px, 250px);
             font-size: 10px;
         }
     }
@@ -516,9 +546,6 @@ input {
         overflow: hidden;
     }
 
-    .cont-controles {
-        height: 150px;
-    }
     /* Nave */
     .fondo-nave {
         z-index: -1;
@@ -571,29 +598,17 @@ input {
         }
     }
 
-    /* Botones boca */
-    .btn-play__boca {
-        top: 128px;
-        left: 40px;
-    }
+    /* Controles */
 
+    /* Botones boca */
     .btn-pausa__boca {
-        top: 165px;
+        top: 145px;
         left: 40px;
     }
 
     /* Botones ojos */
-    .controles__ojos {
-        margin-left: 100px;
-    }
-
-    .btn-play__ojos {
-        top: 128px;
-        left: 190px;
-    }
-
     .btn-pausa__ojos {
-        top: 165px;
+        top: 145px;
         left: 190px;
     }
 

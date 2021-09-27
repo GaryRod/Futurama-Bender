@@ -8,10 +8,26 @@
     <title>Futurama</title>
 </head>
 <body>
+<!-- Pantalla de carga -->
+    <div class="loader" id="loader">
+        <div class="cont-text">
+            <h3 class="cont-text__degradado" id="titulo">Futurama
+            </h3>
+            <h4 class="sombra1">Futurama</h4>
+            <h4 class="sombra2">Futurama</h4>
+            <h4 class="sombra3">Futurama</h4>
+            <h4 class="sombra4">Futurama</h4>
+            <h4 class="sombra5">Futurama</h4>
+            <h4 class="sombra6">Futurama</h4>
+            <h4 class="sombra7">Futurama</h4>
+            <h4 class="sombra8">Futurama</h4>
+            <h4 class="sombra9">Futurama</h4>
+        </div>
+    </div>
 
 <!-- Titulo -->
-    <div class="cont-text">
-        <h3 class="cont-text__degradado">Futurama
+    <div class="cont-text titulo">
+        <h3 class="cont-text__degradado" id="titulo">Futurama
         </h3>
         <h4 class="sombra1">Futurama</h4>
         <h4 class="sombra2">Futurama</h4>
@@ -25,27 +41,32 @@
     </div>
 <!-- Caja de controles -->
     <div class="cont-controles">
-        <h1 class="controles">Controles</h1>
-        <h2 class="controles__boca">Boca</h2>
-        <h2 class="controles__ojos">Ojos</h2>
+        <h1 class="titulo-controles">Controles</h1>
+        <div class="controles-ojos-boca">
+            <h2 class="controles__boca">Boca</h2>
+            <h2 class="controles__ojos">Ojos</h2>
+        </div>
     </div>
 
 <!-- Controles boca -->
-    <input type="radio" id="play-b" name="control-boca">
-    <label for="play-b" class="button btn-play__boca">Play</label>
+    <!-- <input type="radio" id="play-b" name="control-boca">
+    <label for="play-b" class="button btn-play__boca">Play</label> -->
 
-    <input type="radio" id="pause-b" name="control-boca">
-    <label for="pause-b" class="button btn-pausa__boca">Pausa</label>
+    <input type="checkbox" id="pause-b" name="control-boca" class="pause-b input" checked>
+    <label for="pause-b" class="button btn-pausa__boca"></label>
 
 <!-- Controles ojos -->
-    <input type="radio" id="play-o" name="control-ojos">
-    <label for="play-o" class="button btn-play__ojos">Play</label>
+    <!-- <input type="radio" id="play-o" name="control-ojos">
+    <label for="play-o" class="button btn-play__ojos">Play</label> -->
 
-    <input type="radio" id="pause-o" name="control-ojos">
-    <label for="pause-o" class="button btn-pausa__ojos">Pausa</label>
+    <input type="checkbox" id="pause-o" name="control-ojos" class="pause-o input" checked>
+    <label for="pause-o" class="button btn-pausa__ojos"></label>
 
 <!-- Fondo -->
     <img src="imagenes/nave-futurama.png" alt="imagen" class="fondo-nave">
+
+<!-- Audios -->
+    <!-- <audio src="audio/audio-dos.mp3" controls id="audio"></audio> -->
 
 <!-- Cabeza Bender -->
     <div class="cont-cza-uno">
@@ -67,8 +88,8 @@
                 </div>                       
             </div>
             <div class="cont-boca">
-                    <div class="cont-boca__fila">
-                        <div class="cont-boca__colum"></div>
+                <div class="cont-boca__fila">
+                    <div class="cont-boca__colum"></div>
                         <div class="cont-boca__colum"></div>
                         <div class="cont-boca__colum"></div>
                         <div class="cont-boca__colum"></div>
@@ -81,6 +102,8 @@
                 </div>
             </div>
         </div>
-    
+
+        
+<script src="bender.js"></script>
 </body>
 </html>
