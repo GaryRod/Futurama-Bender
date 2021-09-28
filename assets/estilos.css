@@ -55,7 +55,7 @@ body {
     display: inline-block;
     width: 80px;
     height: 30px;
-    background: linear-gradient(to bottom right, #e76e1d 10%, #fa8510 60%);
+    background: linear-gradient(to bottom right, #c54f00 10%, #fa8510 60%);
     border: solid 2px;
     border-radius: 45%;
     text-align: center;
@@ -63,13 +63,14 @@ body {
     box-shadow: 3px 3px;
     position: absolute;
     z-index: 100;
+    transition: all .2s;
 }
 
 .button:active {
-    background: rgb(243, 11, 11);
-    color: white;
-    box-shadow: 3px 3px black;
+    background: #c54f00;
+    box-shadow: 0px 0px;
     border: solid 2px black;
+    transform: translate(3px, 3px);
 }
 
 .input{
@@ -448,7 +449,6 @@ body {
         transform: translate(-36.875em 0px);
     }
 }
-
 .cont-boca__colum {
     width: 2.0187em;
     height: 14em;
