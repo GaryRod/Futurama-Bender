@@ -1,21 +1,470 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(3, 77, 102);
-    overflow-x: hidden;
-    padding-bottom: 20px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(3, 77, 102);
+  overflow-x: hidden;
+  padding-bottom: 20px;
 }
 
 .fondo-nave {
-    position: absolute;
+  position: absolute;
+  z-index: -1;
+  top: 53px;
+  left: -25px;
+  animation-name: nave;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-delay: .5;
+  animation-timing-function: ease-in;
+}
+
+@keyframes nave {
+  0% {
+    transform: translate(0px, 0px );
+  }
+  100% {
+    transform: translate(1200px, 0px);
+  }
+}
+/* Controles */
+/* Botones genrales */
+.cont-controles {
+  width: 300px;
+  height: 130px;
+  border: solid 2px black;
+  border-radius: 35px;
+  background: linear-gradient(to bottom, #570800 10%, #e10300 100%);
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.controles-ojos-boca{
+  display: flex;
+  justify-content: space-around;
+}
+
+.button{
+  cursor: pointer;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  background: linear-gradient(to bottom right, #c54f00 10%, #fa8510 60%);
+  border: solid 2px;
+  border-radius: 45%;
+  text-align: center;
+  padding-top: 3px;
+  box-shadow: 3px 3px;
+  position: absolute;
+  z-index: 100;
+}
+
+.button:active {
+  background: #c54f00;
+  box-shadow: 0px 0px;
+  border: solid 2px black;
+  transform: translate(3px, 3px);
+}
+
+.input{
+  display: none;
+}
+
+/* Botones boca */
+.btn-pausa__boca {
+  top: 180px;
+  left: 40px;
+}
+
+.btn-pausa__boca::after{
+  content: "Pausa";
+}
+
+.pause-b:checked + .btn-pausa__boca::after {
+  content: "Play";
+}
+
+.pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+  animation-name: hablar;
+  animation-play-state: paused;
+}
+
+/* .play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
+  animation-name: hablar;
+  animation-play-state: running;
+} */
+
+/* Botones ojos */
+/* .controles__ojos {
+  margin-left: 100px;
+} */
+
+.btn-pausa__ojos {
+  top: 180px;
+  left: 180px;
+}
+
+.btn-pausa__ojos::after{
+  content: "Pausa";
+}
+
+.pause-o:checked + .btn-pausa__ojos::after{
+  content: "Play";
+}
+
+.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
+  animation-name: pupila-ojos;
+  animation-play-state: paused;
+}
+.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+  animation-name: pupila-ojos;
+  animation-play-state: paused;
+}
+
+/* #play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
+  animation-name: pupila-ojos;
+  animation-play-state: running;
+} */
+
+/* Texto */
+.cont-text {
+  width: 500px;
+  font-size: 12px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cont-text__degradado {
+  font-size: 7em;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  animation-name: texto;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes texto {
+  0% {
+    background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(to bottom, #570800 1%, #e10300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.sombra1 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: 0.01em;
+  left: 0.02em;
+}
+.sombra2 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .02em;
+  left: .03em;
+}
+.sombra3 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .03em;
+  left: .04em;
+}
+.sombra4 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: 0.04em;
+  left: .05em;
+}
+.sombra5 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .05em;
+  left: .06em;
+}
+.sombra6 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .06em;
+  left: .07em;
+}
+.sombra7 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .07em;
+  left: .08em;
+}
+.sombra8 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .08em;
+  left: .09em;
+}
+.sombra9 {
+  text-transform: uppercase;
+  font-size: 7em;
+  position: absolute;
+  z-index: -1;
+  top: .09em;
+  left: .10em;
+}
+
+/* Cabeza */
+.cont-cza-uno {
+  width: 18.75em;
+  height: 28.125em;
+  background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
+  border: solid 2px;
+  border-top: transparent;
+  box-shadow: 10px 3px black;
+  font-size: .5px;
+  margin: -50px 0px 0px 90px;
+
+  position: relative;
+  z-index: -4;
+
+  animation-name: cabeza;
+  animation-delay: 1s;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cabeza {
+  0% {
+    transform: translate(0px, 0px);
+    font-size: .5px;
+  }
+
+  50% {
+    transform: translate(500px, 0px);
+    font-size: .5px;
+  }
+
+  100% {
+    transform: translate(300px, 160px);
+    font-size: 12px;
+  }
+}
+
+.cont-cza-dos {
+  width: 18.75em;
+  height: 24em;
+  position: absolute;
+  background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
+  border: solid 2px;
+  border-radius: 48%;
+  top: -12em;
+  left: -0.125em;
+  box-shadow: 10px 3px black;
+}
+
+/* Antena */
+.cont-ant__inicio {
+  width: 3.125em;
+  height: 3.125em;
+  background-color: rgb(165, 193, 199);
+  border-radius: 50%;
+  border: solid 0.125em;
+  position: absolute;
+  top: -12.5em;
+  left: 7.8125em;
+  box-shadow: 0.625em 0.1875em black;
+}
+
+.cont-ant__cable {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent rgb(165, 193, 199) transparent;
+  border-width: 0px 0.625em 8.3em 0.625em;
+  position: absolute;
+  top: -20.5em;
+  left: 8.78em;
+  box-shadow: 0.5em -0.0625em black;
+}
+
+.cont-ant__punta {
+  width: 1.875em;
+  height: 1.875em;
+  border-radius: 50%;
+  border: solid 0.125em;
+  background-color: rgb(165, 193, 199);
+  position: absolute;
+  top: -20.625em;
+  left: 8.4em;
+  box-shadow: 0.9em 0em black
+}
+
+/* Ojos */
+.cont-ojos {
+  width: 30em;
+  height: 12.5em;
+  background-color: rgb(165, 193, 199);
+  border-radius: 100px;
+  border: solid 2px;
+  position: absolute;
+  left: -5.625em;
+  box-shadow: 10px 3px black
+}
+
+.cont-ojos__fondo {
+  width: 27.5em;
+  height: 10em;
+  background-color: black;
+  position: absolute;
+  border-radius: 100px;
+  top: 1.25em;
+  left: 1.25em;
+}
+
+.cont-ojos__ojo-uno {
+  width: 9.8em;
+  height: 9.8em;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  left: 3.125em;
+  top: 0.1em
+}
+
+.cont-ojos__ojo-dos {
+  width: 9.8em;
+  height: 9.8em;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  right: 3.125em;
+  top: 0.1em;
+}
+
+.cont-ojos__pupilas {
+  background-color: black;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 4.0313em;
+  left: 4.0313em;
+  animation-name: pupila-ojos;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pupila-ojos {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(4.0313em, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  75% {
+    transform: translate(-4.0313em, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* Boca */
+.cont-boca {
+  width: 18.125em;
+  height: 9.375em;
+  background-color: white;
+  position: relative;
+  border-radius: 45%;
+  border: solid 0.125em;
+  top: 17.5em;
+  left: 0.13em;
+  overflow: hidden;
+}
+
+.cont-boca__fila {
+  display: flex;
+  position: relative;
+  top: -1.8em;
+  background-image: url(../imagenes/hablar.png);
+  animation-name: hablar;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hablar {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -40em 0em;
+  }       
+}
+
+.cont-boca__colum {
+  width: 2.0187em;
+  height: 14em;
+  border: solid 0.125em;
+  position: relative;
+}
+
+/* Pantalla de carga */
+.loader{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(3, 77, 102);
+  position: fixed;
+  z-index: 10000;
+  transition: all 2s;
+}
+
+.loader2{
+  transform: scale(0);
+}
+
+/* Media Queries */
+@media screen and (max-width: 780px) and (min-width: 481px) {
+
+  .fondo-nave {
     z-index: -1;
-    top: 53px;
+    top: 45px;
     left: -25px;
     animation-name: nave;
     animation-duration: 5s;
@@ -24,609 +473,147 @@ body {
     animation-timing-function: ease-in;
 }
 
-@keyframes nave {
+  @keyframes nave {
     0% {
-        transform: translate(0px, 0px );
+      transform: translate(0px, 0px);
     }
-    100% {
-        transform: translate(1200px, 0px);
-    }
-}
-/* Controles */
-/* Botones genrales */
-.cont-controles {
-    width: 300px;
-    height: 130px;
-    border: solid 2px black;
-    border-radius: 35px;
-    background: linear-gradient(to bottom, #570800 10%, #e10300 100%);
-    position: relative;
-    text-align: center;
-    color: white;
-}
 
-.controles-ojos-boca{
-    display: flex;
-    justify-content: space-around;
-}
-
-.button{
-    cursor: pointer;
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    background: linear-gradient(to bottom right, #c54f00 10%, #fa8510 60%);
-    border: solid 2px;
-    border-radius: 45%;
-    text-align: center;
-    padding-top: 3px;
-    box-shadow: 3px 3px;
-    position: absolute;
-    z-index: 100;
-}
-
-.button:active {
-    background: #c54f00;
-    box-shadow: 0px 0px;
-    border: solid 2px black;
-    transform: translate(3px, 3px);
-}
-
-.input{
-    display: none;
-}
-
-/* Botones boca */
-.btn-pausa__boca {
-    top: 180px;
-    left: 40px;
-}
-
-.btn-pausa__boca::after{
-    content: "Pausa";
-}
-
-.pause-b:checked + .btn-pausa__boca::after {
-    content: "Play";
-}
-
-.pause-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: paused;
-}
-
-/* .play-b:checked ~ .cont-cza-uno .cont-boca .cont-boca__fila {
-    animation-name: hablar;
-    animation-play-state: running;
-} */
-
-/* Botones ojos */
-/* .controles__ojos {
-    margin-left: 100px;
-} */
-
-.btn-pausa__ojos {
-    top: 180px;
-    left: 180px;
-}
-
-.btn-pausa__ojos::after{
-    content: "Pausa";
-}
-
-.pause-o:checked + .btn-pausa__ojos::after{
-    content: "Play";
-}
-
-.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: paused;
-}
-.pause-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: paused;
-}
-
-/* #play-o:checked ~ .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-uno .cont-ojos__pupilas, .cont-cza-uno .cont-ojos .cont-ojos__fondo .cont-ojos__ojo-dos .cont-ojos__pupilas {
-    animation-name: pupila-ojos;
-    animation-play-state: running;
-} */
-
-
-/* Texto */
-.cont-text {
-    font-size: 14px;
-    margin: 0 auto;
-    width: 0px;
-    position: relative;
-}
-
-.cont-text__degradado {
-    font-size: 7em;
-    text-transform: uppercase;
-    background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    animation-name: texto;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes texto {
-    0% {
-        background: linear-gradient(to bottom, #570800 40%, #e10300 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
     50% {
-        background: linear-gradient(to bottom, #570800 20%, #e10300 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      transform: translate(0px, 180px);
     }
+
     100% {
-        background: linear-gradient(to bottom, #570800 1%, #e10300 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      transform: translate(400px, 180px);
     }
-}
+  }
 
-.sombra1 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: 0.01em;
-    left: 0.02em;
-}
-.sombra2 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .02em;
-    left: .03em;
-}
-.sombra3 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .03em;
-    left: .04em;
-}
-.sombra4 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: 0.04em;
-    left: .05em;
-}
-.sombra5 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .05em;
-    left: .06em;
-}
-.sombra6 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .06em;
-    left: .07em;
-}
-.sombra7 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .07em;
-    left: .08em;
-}
-.sombra8 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .08em;
-    left: .09em;
-}
-.sombra9 {
-    text-transform: uppercase;
-    font-size: 7em;
-    position: absolute;
-    z-index: -1;
-    top: .09em;
-    left: .10em;
-}
-
-/* Cabeza */
-.cont-cza-uno {
-    width: 18.75em;
-    height: 28.125em;
-    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
-    border: solid 2px;
-    border-top: transparent;
-    box-shadow: 10px 3px black;
-    font-size: .5px;
-    margin: -50px 0px 0px 90px;
-
-    position: relative;
+  /* Cabeza */
+  .cont-cza-uno {
     z-index: -4;
-
+    font-size: .5px;
+    margin: -20px 0px 0px 100px;
     animation-name: cabeza;
-    animation-delay: 1s;
-    animation-duration: 5s;
+    animation-delay: .5s;
+    animation-duration: 7s;
     animation-fill-mode: forwards;
-}
+  }
 
-@keyframes cabeza {
+  @keyframes cabeza {
     0% {
-        transform: translate(0px, 0px);
-        font-size: .5px;
+      transform: translate(0px, 0px);
+      font-size: .5px;
     }
 
     50% {
-        transform: translate(500px, 0px);
-        font-size: .5px;
+      transform: translate(0px, 125px);
+      font-size: .5px;
     }
 
     100% {
-        transform: translate(300px, 160px);
-        font-size: 12px;
-        
+      transform: translate(100px, 250px);
+      font-size: 10px;
     }
-}
-
-.cont-cza-dos {
-    width: 18.75em;
-    height: 24em;
-    position: absolute;
-    background: linear-gradient(to left, #8ba6a9 60%, #a5c1c7 100%);
-    border: solid 2px;
-    border-radius: 48%;
-    top: -12em;
-    left: -0.125em;
-    box-shadow: 10px 3px black;
-}
-
-/* Antena */
-.cont-ant__inicio {
-    width: 3.125em;
-    height: 3.125em;
-    background-color: rgb(165, 193, 199);
-    border-radius: 50%;
-    border: solid 0.125em;
-    position: absolute;
-    top: -12.5em;
-    left: 7.8125em;
-    box-shadow: 0.625em 0.1875em black
-    
-}
-
-.cont-ant__cable {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent transparent rgb(165, 193, 199) transparent;
-    border-width: 0px 0.625em 8.3em 0.625em;
-    position: absolute;
-    top: -20.5em;
-    left: 8.78em;
-    box-shadow: 0.5em -0.0625em black
-}
-
-.cont-ant__punta {
-    width: 1.875em;
-    height: 1.875em;
-    border-radius: 50%;
-    border: solid 0.125em;
-    background-color: rgb(165, 193, 199);
-    position: absolute;
-    top: -20.625em;
-    left: 8.4em;
-    box-shadow: 0.9em 0em black
-}
-
-/* Ojos */
-.cont-ojos {
-    width: 30em;
-    height: 12.5em;
-    background-color: rgb(165, 193, 199);
-    border-radius: 100px;
-    border: solid 2px;
-    position: absolute;
-    left: -5.625em;
-    box-shadow: 10px 3px black
-}
-
-.cont-ojos__fondo {
-    width: 27.5em;
-    height: 10em;
-    background-color: black;
-    position: absolute;
-    border-radius: 100px;
-    top: 1.25em;
-    left: 1.25em;
-}
-
-.cont-ojos__ojo-uno {
-    width: 9.8em;
-    height: 9.8em;
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    left: 3.125em;
-    top: 0.1em
-}
-
-.cont-ojos__ojo-dos {
-    width: 9.8em;
-    height: 9.8em;
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    right: 3.125em;
-    top: 0.1em;
-}
-
-.cont-ojos__pupilas {
-    background-color: black;
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    top: 4.0313em;
-    left: 4.0313em;
-    animation-name: pupila-ojos;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes pupila-ojos {
+  }
+  
+  @keyframes hablar {
     0% {
-        transform: translate(0px, 0px);
-    }
-
-    25% {
-        transform: translate(4.0313em, 0px);
-    }
-
-    50% {
-        transform: translate(0px, 0px);
-    }
-
-    75% {
-        transform: translate(-4.0313em, 0px);
-    }
-
-    100% {
-        transform: translate(0px, 0px);
-    }
-}
-
-/* Boca */
-.cont-boca {
-    width: 18.125em;
-    height: 9.375em;
-    background-color: white;
-    position: relative;
-    border-radius: 45%;
-    border: solid 0.125em;
-    top: 17.5em;
-    left: 0.13em;
-    overflow: hidden;
-}
-
-.cont-boca__fila {
-    display: flex;
-    position: relative;
-    top: -1.8em;
-    background-image: url(../imagenes/hablar.png);
-    animation-name: hablar;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-
-.hablar{
-    position: relative;
-    top: 60px;
-    animation-name: hablar;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes hablar {
-    0% {
-        transform: translate(0px, 0px);
+      background-position: 0px 0px;
     }
     100% {
-        transform: translate(-36.875em 0px);
-    }
+      background-position: -40em 0em;
+    }       
+  }
 }
-.cont-boca__colum {
-    width: 2.0187em;
-    height: 14em;
-    border: solid 0.125em;
-    position: relative;
-}
-
-/* Pantalla de carga */
-.loader{
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(3, 77, 102);
-    position: fixed;
-    z-index: 10000;
-    transition: all 2s;
-}
-
-.loader2{
-    transform: scale(0);
-}
-
-/* Media Queries */
-@media screen and (max-width: 780px) and (min-width: 481px) {    
-
-    .fondo-nave {
-        z-index: -1;
-        top: 45px;
-        left: -25px;
-        animation-name: nave;
-        animation-duration: 5s;
-        animation-iteration-count: 1;
-        animation-delay: .5;
-        animation-timing-function: ease-in;
-    }
-    
-    @keyframes nave {
-        0% {
-            transform: translate(0px, 0px);
-        }
-
-        50% {
-            transform: translate(0px, 180px);
-        }
-        100% {
-            transform: translate(400px, 180px);
-        }
-    }
-    /* Cabeza */
-    .cont-cza-uno {
-        z-index: -4;
-        font-size: .5px;
-        margin: -20px 0px 0px 100px;
-        animation-name: cabeza;
-        animation-delay: .5s;
-        animation-duration: 7s;
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes cabeza {
-        0% {
-            transform: translate(0px, 0px);
-            font-size: .5px;
-        }
-
-        50% {
-            transform: translate(0px, 125px);
-            font-size: .5px;
-        }
-
-        100% {
-            transform: translate(100px, 250px);
-            font-size: 10px;
-        }
-    }
-    }
-
-    .cont-text {
-        font-size: 12px;
-        width: 500px;
-    }
-
-    @keyframes hablar {
-        0% {
-            background-position: 0px 0px;
-        }
-        100% {
-            background-position: -40em 0em;
-        }       
-    }
 
 @media screen and (max-width: 480px) {
-    body {
-        overflow: hidden;
+  body {
+    overflow: hidden;
+  }
+
+  /* Nave */
+  .fondo-nave {
+    z-index: -1;
+    top: 10px;
+    left: -25px;
+    animation-name: nave;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-delay: .5;
+    animation-timing-function: ease-in;
+  }
+
+  @keyframes nave {
+    0% {
+      transform: translate(0px, 0px);
     }
 
-    /* Nave */
-    .fondo-nave {
-        z-index: -1;
-        top: 10px;
-        left: -25px;
-        animation-name: nave;
-        animation-duration: 5s;
-        animation-iteration-count: 1;
-        animation-delay: .5;
-        animation-timing-function: ease-in;
+    50% {
+      transform: translate(0px, 150px);
     }
-    
-    @keyframes nave {
-        0% {
-            transform: translate(0px, 0px);
-        }
+    100% {
+      transform: translate(400px, 150px);
+    }
+  }
 
-        50% {
-            transform: translate(0px, 150px);
-        }
-        100% {
-            transform: translate(400px, 150px);
-        }
-    }
-    /* Cabeza */
-    .cont-cza-uno {
-        z-index: -4;
-        font-size: .5px;
-        margin: -36px 0px 0px 90px;
-        animation-name: cabeza;
-        animation-delay: .5s;
-        animation-duration: 7s;
-        animation-fill-mode: forwards;
+  /* Cabeza */
+  .cont-cza-uno {
+    z-index: -4;
+    font-size: .5px;
+    margin: -36px 0px 0px 90px;
+    animation-name: cabeza;
+    animation-delay: .5s;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes cabeza {
+    0% {
+      transform: translate(0px, 0px);
+      font-size: .5px;
     }
 
-    @keyframes cabeza {
-        0% {
-            transform: translate(0px, 0px);
-            font-size: .5px;
-        }
-
-        50% {
-            transform: translate(80px, 125px);
-            font-size: .5px;
-        }
-
-        100% {
-            transform: translate(30px, 250px);
-            font-size: 9px;
-        }
+    50% {
+      transform: translate(80px, 125px);
+      font-size: .5px;
     }
 
-    /* Controles */
-
-    /* Botones boca */
-    .btn-pausa__boca {
-        top: 145px;
-        left: 40px;
+    100% {
+      transform: translate(30px, 250px);
+      font-size: 9px;
     }
+  }
 
-    /* Botones ojos */
-    .btn-pausa__ojos {
-        top: 145px;
-        left: 190px;
-    }
+  /* Controles */
+  /* Botones boca */
+  .btn-pausa__boca {
+    top: 145px;
+    left: 40px;
+  }
 
-    /* Texto */
-    .cont-text {
-        width: 300px;
-        font-size: 7px;
-        margin: 0 auto
-    }
+  /* Botones ojos */
+  .btn-pausa__ojos {
+    top: 145px;
+    left: 190px;
+  }
 
-    .cont-boca__fila {
-        top: -.2em;
-        background-image: url(../imagenes/hablar-mobile.png);
-    }
+  /* Texto */
+  .cont-text {
+    width: 300px;
+    font-size: 7px;
+    margin: 0 auto
+  }
 
-    @keyframes hablar {
-        0% {
-            background-position: 0px 0px;
-        }
-        100% {
-            background-position: -31em 0em;
-        }       
+  .cont-boca__fila {
+    top: -.2em;
+    background-image: url(../imagenes/hablar-mobile.png);
+  }
+
+  @keyframes hablar {
+    0% {
+      background-position: 0px 0px;
     }
+    100% {
+      background-position: -31em 0em;
+    }       
+  }
 }
